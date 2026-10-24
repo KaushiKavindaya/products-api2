@@ -1,11 +1,29 @@
-classDiagram
-    class Product {
-        -id: long
-        -name: String
-        -price: double
-        +Product()
-        +Product(id: Long, name: String, price: double)
-        +getId() Long
-        +getName() String
-        +getPrice() double
-    }
+@startuml 
+  
+class Product { 
+  - id : Long 
+  - name : String 
+  - price : double 
+  + getName() : String 
+  + getPrice() : double 
+} 
+  
+class DigitalProduct { 
+  - downloadUrl : String 
+  - fileSizeMB : double 
+  + getDownloadUrl() : String 
+} 
+  
+class PhysicalProduct { 
+  - weightKg : double 
+  - dimensions : String 
+5COSC019W · OBJECT ORIENTED PROGRAMMING · TUTORIAL 4 STUDENT LAB GUIDE 
+Page 8 of 11 
+  + getWeightKg() : double 
+} 
+  
+' <|-- is the inheritance arrow. The PARENT goes on the left. 
+Product <|-- DigitalProduct 
+Product <|-- PhysicalProduct 
+  
+@enduml 
